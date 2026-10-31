@@ -1,5 +1,7 @@
 # 中继台速查 · CN Repeater Index
 
+[![ci](https://github.com/Tbe1998/cn-repeater-index/actions/workflows/ci.yml/badge.svg)](https://github.com/Tbe1998/cn-repeater-index/actions/workflows/ci.yml)
+
 把国内业余无线电中继台的**公开信息**整理成可查、可核对、可离线用的速查工具。
 
 抓取 → 清洗 → 建库 → 网页/接口 → 手机 PWA → 单文件 HTML → CHIRP CSV 导出。
