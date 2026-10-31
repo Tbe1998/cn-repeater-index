@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Python 单测（解析/几何/CHIRP）
+        run: python3 -m unittest discover -s tests -v
+
+      - name: 前端逻辑冒烟（Node + 最小 DOM 桩）
+        run: node tests/app_smoke.mjs
+
+      - name: 打包单文件
+        run: python3 scripts/make_single_file.py
+
+      - name: 单文件产物冒烟
+        run: node tests/single_file_smoke.mjs
+
+      - name: 凭据扫描
+        run: |
+          ! git grep -nIE '(BEGIN [A-Z ]*PRIVATE KEY|password\s*[:=]\s*["'"'"']?[A-Za-z0-9]{8,}|sk-[A-Za-z0-9]{16,})' -- . \
+            ':!*.example' ':!README.md'
