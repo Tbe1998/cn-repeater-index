@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>中继台速查</title>
+<meta name="theme-color" content="#0b1220">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="row1">
+    <h1>中继台速查 <span id="cnt" class="cnt">—</span></h1>
+    <button id="loc" class="btn primary" type="button">定位</button>
+  </div>
+  <div class="row2">
+    <input id="q" type="search" placeholder="搜呼号 / 城市 / 频率" autocomplete="off">
+  </div>
+  <div class="row3" id="filters">
+    <button class="chip on" data-f="band" data-v="all">全部</button>
+    <button class="chip" data-f="band" data-v="70cm">70cm</button>
+    <button class="chip" data-f="band" data-v="2m">2m</button>
+    <button class="chip" data-f="mode" data-v="analog">模拟</button>
+    <button class="chip" data-f="mode" data-v="digital">数字</button>
+    <button class="chip" data-f="mode" data-v="mixed">数模</button>
+  </div>
+  <div class="row4">
+    <span id="geo" class="geo">未定位：按地区排序</span>
+    <button id="export" class="btn ghost" type="button">导出 CHIRP</button>
+  </div>
+</header>
+
+<main id="list" class="list"></main>
+
+<section class="panel">
+  <details>
+    <summary>数据来源与免责</summary>
+    <div id="sources"></div>
+    <p class="warn" id="disclaimer"></p>
+    <p class="warn">使用提示：A 类业余电台可工作于 30–3000MHz 范围内划分给业余业务的频率、最大发射功率不大于 25W（《业余无线电台管理办法》，2024-03-01 施行）。跨地区使用请以当地公示与中继台实际参数为准。</p>
+  </details>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>

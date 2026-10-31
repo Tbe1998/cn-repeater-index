@@ -1,0 +1,45 @@
+{
+  "_note": "数据源注册表。每条源都必须写明来源、获取方式、公布日期来源，以及引用/授权要求。新增源只改这里 + 写好 parser。",
+  "sources": [
+    {
+      "id": "crac_relay",
+      "name": "CRAC 业余中继台信息公布",
+      "url": "https://www.crac.org.cn/?p=971",
+      "publisher": "中国无线电协会业余无线电分会（CRAC）",
+      "kind": "html_lines",
+      "page_date": "2015-04-03",
+      "parser": "fetch_crac",
+      "citation": "中国无线电协会业余无线电分会（CRAC）业余中继台信息公布页",
+      "terms": "CRAC 明确：仅接受设台机构或其技术负责人经官方渠道提交的信息，其他来源不予汇总。本工程只做原文抓取与展示，不修改、不推测、不补全缺失字段。",
+      "freshness_warning": "该页创建于 2015 年，条目可能长期未更新，使用前必须与当地无线电管理机构最新公示比对。"
+    },
+    {
+      "id": "sz_gxj_2025",
+      "name": "深圳市业余无线电中继台公开信息表",
+      "url": "http://gxj.sz.gov.cn/gkmlpt/content/12/12361/post_12361507.html",
+      "publisher": "深圳市工业和信息化局",
+      "kind": "html_table",
+      "province": "广东",
+      "page_date": "2025-09-04",
+      "parser": "fetch_gov_table",
+      "table_header": ["台站所属区域", "上行中心频率（MHz）", "下行中心频率（MHz）", "调制方式", "亚音频（Hz）", "呼号"],
+      "citation": "深圳市工业和信息化局《深圳市业余无线电中继台公开信息表》（2025-09-04，现行有效）",
+      "terms": "政府公开信息，转载须保留发布机构与日期。",
+      "freshness_warning": "以通管局/工信局最新公示为准。"
+    },
+    {
+      "id": "sz_gxj_2026",
+      "name": "深圳市业余无线电中继台公开信息表（2026 新增）",
+      "url": "http://gxj.sz.gov.cn/gkmlpt/content/12/12710/post_12710906.html",
+      "publisher": "深圳市工业和信息化局",
+      "kind": "html_table",
+      "province": "广东",
+      "page_date": "2026-03-31",
+      "parser": "fetch_gov_table",
+      "table_header": ["台站所属区域", "上行中心频率（MHz）", "下行中心频率（MHz）", "调制方式", "亚音频（Hz）", "呼号"],
+      "citation": "深圳市工业和信息化局《深圳市业余无线电中继台公开信息表》（2026-03-31，粤工信规字〔2025〕3号）",
+      "terms": "政府公开信息，转载须保留发布机构与日期。",
+      "freshness_warning": "该文只公布当批次新审批台站，非全市全量。"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# 构建产物 / 本地缓存，可由 scripts/build.py 重建
+/data/
+/db/*
+!/db/repeaters.sqlite
+/dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# 编辑器 / 系统
+.DS_Store
+.idea/
+.vscode/

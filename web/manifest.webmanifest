@@ -1,0 +1,11 @@
+{
+  "name": "中继台速查",
+  "short_name": "中继台",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "lang": "zh-CN",
+  "description": "国内业余无线电中继台速查：附近搜索、方位距离、参数详情、CHIRP 导出",
+  "icons": []
+}
